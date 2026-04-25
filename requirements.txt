@@ -20,8 +20,6 @@ tldextract==5.1.2
 # WHOIS lookup for domain age
 python-whois==0.9.4
 
-# Data manipulation (used in analytics helpers)
-pandas==2.2.2
 
 # Optional: async HTTP for faster concurrent checks
 # (concurrent.futures used by default in this project)
