@@ -1,0 +1,37 @@
+# ──────────────────────────────────────────────────────────────
+# requirements.txt — Phishing Detection System
+# Install: pip install -r requirements.txt
+# ──────────────────────────────────────────────────────────────
+
+# Web framework & API
+flask==3.0.3
+flask-cors==4.0.1
+
+# HTTP requests
+requests==2.32.3
+
+# HTML parsing for content analysis
+beautifulsoup4==4.12.3
+lxml==5.2.2                 # faster BS4 parser
+
+# Domain / URL parsing
+tldextract==5.1.2
+
+# WHOIS lookup for domain age
+python-whois==0.9.4
+
+# Data manipulation (used in analytics helpers)
+pandas==2.2.2
+
+# Optional: async HTTP for faster concurrent checks
+# (concurrent.futures used by default in this project)
+httpx==0.27.0
+
+# Environment variable management
+python-dotenv==1.0.1
+
+# ──────────────────────────────────────────────────────────────
+# Standard library modules used (no install needed):
+#   ssl, socket, sqlite3, re, json, hashlib, datetime,
+#   concurrent.futures, urllib.parse, pathlib, time, os
+# ──────────────────────────────────────────────────────────────
