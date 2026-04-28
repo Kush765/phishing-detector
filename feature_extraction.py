@@ -78,23 +78,22 @@ def extract_url_features(url: str) -> dict:
     # Suspicious keyword presence in URL
     url_lower = url.lower()
     features["has_suspicious_keyword"] = 1 if any(kw in url_lower for kw in SUSPICIOUS_KEYWORDS) else 0
-# Detect brand impersonation in URL
-features["has_brand_keyword"] = 0
+    # Detect brand impersonation in URL
+    features["has_brand_keyword"] = 0
 
-domain = extracted.domain.lower()
-full_domain = f"{extracted.domain}.{extracted.suffix}".lower()
+    domain = extracted.domain.lower()
+    full_domain = f"{extracted.domain}.{extracted.suffix}".lower()
 
-for brand in BRAND_KEYWORDS:
-    if brand in url_lower:
+    for brand in BRAND_KEYWORDS:
+        if brand in url_lower:
         # Brand present but not actual domain
-        if brand != domain:
-            features["has_brand_keyword"] = 1
+            if brand != domain:
+                features["has_brand_keyword"] = 1
 
         # Brand not matching full domain
-        if brand not in full_domain:
-            features["has_brand_keyword"] = 1
-
-        break
+            if brand not in full_domain:
+                features["has_brand_keyword"] = 1
+                break
 
     # High-risk combo: brand + phishing keywords
     features["high_risk_combo"] = 1 if (
