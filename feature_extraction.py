@@ -117,8 +117,7 @@ for brand in BRAND_KEYWORDS:
     # TLD suspiciousness (common in phishing campaigns)
     suspicious_tlds = [".tk", ".ml", ".ga", ".cf", ".gq", ".xyz", ".top", ".work", ".click"]
     features["suspicious_tld"] = 1 if any(url_lower.endswith(tld) for tld in suspicious_tlds) else 0
-
-    return features
+        return features
 
 
 def _is_ip_address(hostname: str) -> bool:
