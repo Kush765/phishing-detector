@@ -96,10 +96,10 @@ for brand in BRAND_KEYWORDS:
 
         break
 
-# High-risk combo: brand + phishing keywords
-features["high_risk_combo"] = 1 if (
-    features["has_brand_keyword"] and features["has_suspicious_keyword"]
-) else 0
+    # High-risk combo: brand + phishing keywords
+    features["high_risk_combo"] = 1 if (
+        features["has_brand_keyword"] and features["has_suspicious_keyword"]
+    ) else 0
 
     # Hex encoding or obfuscation
     features["has_hex_encoding"] = 1 if re.search(r"%[0-9a-fA-F]{2}", url) else 0
