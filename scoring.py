@@ -24,8 +24,8 @@ from typing import Tuple
 # ─────────────────────────────────────────────
 # CLASSIFICATION THRESHOLDS
 # ─────────────────────────────────────────────
-SAFE_THRESHOLD = 30
-SUSPICIOUS_THRESHOLD = 60
+SAFE_THRESHOLD = 25
+SUSPICIOUS_THRESHOLD = 50
 
 
 # ─────────────────────────────────────────────
@@ -73,23 +73,23 @@ def score_url_features(url_features: dict) -> Tuple[float, dict]:
 
     # Suspicious keyword in URL
     if url_features.get("has_suspicious_keyword", 0):
-        score += 3.0
-        breakdown["suspicious_keyword"] = 3.0
+        score += 10.0
+        breakdown["suspicious_keyword"] = 10.0
 
     # Brand keyword with a different domain (impersonation attempt)
     if url_features.get("has_brand_keyword", 0):
-        score += 2.0
-        breakdown["brand_keyword"] = 2.0
+        score += 15.0
+        breakdown["brand_keyword"] = 15.0
 
     # Non-HTTPS connection
     if not url_features.get("is_https", 0):
-        score += 3.0
-        breakdown["no_https"] = 3.0
+        score += 10.0
+        breakdown["no_https"] = 10.0
 
     # Suspicious TLD
     if url_features.get("suspicious_tld", 0):
-        score += 4.0
-        breakdown["suspicious_tld"] = 4.0
+        score += 8.0
+        breakdown["suspicious_tld"] = 8.0
 
     # URL shortener (masks real destination)
     if url_features.get("is_shortened_url", 0):
