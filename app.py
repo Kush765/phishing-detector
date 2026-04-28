@@ -1,7 +1,7 @@
 """
 app.py
 ------
-Flask REST API backend for the phishing detection system.
+Flask REST API backend for the Sentry Threat Engine .
 
 Endpoints:
   POST /api/scan          → Analyze a URL and return risk score
@@ -162,13 +162,13 @@ def index():
 
 if __name__ == "__main__":
     print("=" * 55)
-    print("  Phishing Detection System  |  http://localhost:5000")
+    print("  Sentry Threat Engine   |  http://localhost:5000")
     print("=" * 55)
     import os
 
 if __name__ == "__main__":
     print("=" * 55)
-    print("  Phishing Detection System")
+    print("  Sentry Threat Engine ")
     print("=" * 55)
 
     port = int(os.environ.get("PORT", 5000))

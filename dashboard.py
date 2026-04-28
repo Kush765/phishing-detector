@@ -259,7 +259,7 @@ DASHBOARD_HTML = r"""<!DOCTYPE html>
 
 <header>
   <div class="logo-icon">🛡</div>
-  <h1>Phish<span>Guard</span></h1>
+  <h1>SENTRY</span></h1>
   <div class="header-badge">v1.0 · Real-time Detection</div>
 </header>
 
