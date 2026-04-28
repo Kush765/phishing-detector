@@ -81,6 +81,11 @@ def score_url_features(url_features: dict) -> Tuple[float, dict]:
         score += 15.0
         breakdown["brand_keyword"] = 15.0
 
+    # High-risk combo: brand + phishing keywords
+    if url_features.get("high_risk_combo", 0):
+        score += 25.0
+        breakdown["high_risk_combo"] = 25.0
+    
     # Non-HTTPS connection
     if not url_features.get("is_https", 0):
         score += 10.0
