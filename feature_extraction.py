@@ -86,11 +86,11 @@ def extract_url_features(url: str) -> dict:
 
     for brand in BRAND_KEYWORDS:
         if brand in url_lower:
-        # Brand present but not actual domain
+            # Brand present but not actual domain
             if brand != domain:
                 features["has_brand_keyword"] = 1
 
-        # Brand not matching full domain
+            # Brand not matching full domain
             if brand not in full_domain:
                 features["has_brand_keyword"] = 1
                 break
@@ -116,7 +116,7 @@ def extract_url_features(url: str) -> dict:
     # TLD suspiciousness (common in phishing campaigns)
     suspicious_tlds = [".tk", ".ml", ".ga", ".cf", ".gq", ".xyz", ".top", ".work", ".click"]
     features["suspicious_tld"] = 1 if any(url_lower.endswith(tld) for tld in suspicious_tlds) else 0
-        return features
+    return features
 
 
 def _is_ip_address(hostname: str) -> bool:
